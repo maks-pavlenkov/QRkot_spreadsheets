@@ -1,5 +1,7 @@
 from typing import Optional
+
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.crud.base import CRUDBase
 from app.models.donation import Donation
 from app.models.user import User

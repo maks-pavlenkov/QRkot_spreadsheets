@@ -1,7 +1,7 @@
 from aiogoogle import Aiogoogle
 from aiogoogle.auth.creds import ServiceAccountCreds
-from app.core.config import settings
 
+from app.core.config import settings
 
 SCOPES = [
     'https://www.googleapis.com/auth/spreadsheets',
@@ -19,7 +19,6 @@ INFO = {
     'auth_provider_x509_cert_url': settings.auth_provider_x509_cert_url,
     'client_x509_cert_url': settings.client_x509_cert_url
 }
-print(INFO)
 cred = ServiceAccountCreds(scopes=SCOPES, **INFO)
 
 

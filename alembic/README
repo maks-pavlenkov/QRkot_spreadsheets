@@ -1,1 +1,10 @@
-Generic single-database configuration with an async dbapi.
+Основные команды
+
+Начало работы
+- alembic init --template async alembic
+
+Создание файла миграции
+- alembic revision --autogenerate -m "First migration"
+
+Применение миграции
+- alembic upgrade head
