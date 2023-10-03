@@ -1,6 +1,6 @@
 from datetime import datetime
 from typing import Optional
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, Extra
 
 
 class CharityProjectBase(BaseModel):
@@ -16,6 +16,9 @@ class CharityProjectCreate(CharityProjectBase):
 class CharityProjectUpdate(CharityProjectBase):
     description: Optional[str] = Field(None, min_length=1)
     full_amount: Optional[int] = Field(None, gt=0)
+
+    class Config:
+        extra = Extra.forbid
 
     @validator('name')
     def name_cannot_be_null(cls, value):

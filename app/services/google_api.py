@@ -49,13 +49,11 @@ async def spreadsheets_update_value(
 ) -> None:
     now_date_time = datetime.now().strftime(FORMAT)
     service = await wrapper_services.discover('sheets', 'v4')
-    # Здесь формируется тело таблицы
     table_values = [
         ['Отчет от', now_date_time],
         ['Топ проектов по скорости закрытия'],
         ['Название проекта', 'Время сбора', 'Описание']
     ]
-    # Здесь в таблицу добавляются строчки
     for project in projects:
         new_row = [project[0], project[2], project[1]]
         table_values.append(new_row)
